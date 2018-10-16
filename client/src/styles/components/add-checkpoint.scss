@@ -1,0 +1,168 @@
+.add-checkpoint{
+    &__add-area{
+        position: relative;
+        margin-bottom: 15px;
+    }
+    &__add-button{
+        width: 100%;
+        text-align: center;
+        padding: 31px 15px;
+        border: none;
+        border-radius: 3px;
+        background-color: lighten(#c9c9c9, 18%);
+        cursor: pointer;
+        transition: 0.1s background-color ease;
+        &:hover{
+            background-color: lighten(#c9c9c9, 15%);
+        }
+        &:focus{
+            outline: none;
+        }
+    }
+    &__checkpoints{
+        margin-bottom: 10px;
+    }
+    &__checkpoints-item{
+        position: relative;
+        box-sizing: border-box;
+        padding: 25px 20px;
+        border-radius: 3px;
+        padding-bottom: 25px;
+        background-color: lighten(#c9c9c9, 5%);
+        margin-bottom: 10px;
+        text-align: left;
+        &::before{
+            content: '';
+            position: absolute;
+            left: -27px;
+            top: 50%;
+            transform:translateY(-50%);
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            border: 2px solid #332E3C;
+        }
+        &::after{
+            content: '';
+            position: absolute;
+            display: block;
+            width: 1px;
+            height: 60px;
+            background-color: #000;
+            left: -20px;
+            top: -7%;
+            transform:translateY(-50%);
+        }
+        &:first-child::after{
+            display: none;
+        }
+
+    }
+    &__checkpoint-name{
+        font-size: 16px;
+        display: block;
+        padding-left: 5px;
+        margin-bottom: 10px;
+    }
+    &__checkpoint-date{
+        text-align: left;
+        font-size: 13px;
+        color: #67697C;
+        display: block;
+    }
+    &__checkpoint-delete{
+        position: absolute;
+        top: 3px;
+        right: 3px;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        cursor: pointer;
+        &--close-btn{
+            top: -10px;
+            right: -10px;
+        }
+        &:before,&:after{
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+           
+            width: 15px;
+            height: 1px;
+            background-color: #000;
+        }
+        &:after{
+            transform: translate(-50%,-50%) rotate(45deg); 
+        }
+        &:before{
+            transform: translate(-50%,-50%) rotate(-45deg); 
+        }
+    }
+    &__text-input-wrapper{
+        box-sizing: border-box;
+        padding:20px;
+        border-radius: 3px;
+        background-color: lighten(#c9c9c9, 5%);
+    }
+    &__text-input{
+        width: 90%;
+        background-color: transparent;
+        border: none;
+        padding: 5px;
+        border-bottom: 1px solid #000;
+        display: none;
+        margin-bottom: 4px;
+        &:focus{
+            outline: none;  
+        }
+        &--visible{
+            display: block;
+        }
+    }
+    &__set-time{
+        position: absolute;
+        right: 0px;
+        top: -0px;
+    }
+    &__button-wrapper{
+        display: flex;
+        justify-content: flex-start;
+    }
+    &__button{
+        
+    }
+    .SingleDatePickerInput_calendarIcon{
+        margin: 0;
+        padding:27px 20px;
+    }
+    .SingleDatePickerInput{
+        background-color: transparent;
+    }
+    .SingleDatePickerInput__withBorder{
+        border: none;
+    }
+    .DateInput{
+        width: auto;
+        background-color: transparent;
+    }
+    .DateInput_input{
+        width: auto;
+        background-color: transparent;
+        font-size: 0;
+        line-height: 0;
+        padding: 0;
+    }
+    .DateInput_fang{
+        top: 30px !important;
+        left: -36px;
+    }
+    .SingleDatePickerInput_calendarIcon_svg{
+        fill: #000;
+    }
+    .SingleDatePicker_picker{
+        left: -28px !important;
+        top: 69px !important
+    }
+   
+}

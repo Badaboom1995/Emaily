@@ -1,0 +1,115 @@
+.goal-demo{
+    position: absolute;
+    width: 350px;
+    box-sizing: border-box;
+    background-color: #fff;
+    right: -365px;
+    top:0px;
+    border-bottom: 5px solid #ffd166;
+    &--hard{
+        border-bottom: 5px solid #BF211E;
+    }
+    &--medium{
+        border-bottom: 5px solid #F49D37;
+    }
+    &--easy{
+        border-bottom: 5px solid #00CC66;
+    }
+    &--on-dashboard{
+        position: relative;
+        top: auto;
+        right: auto;
+        margin-right: 15px;
+    }
+    &__header{
+        position: relative;
+        background-color: #332E3C;
+        color: #fff;
+        padding: 15px;
+        padding-top: 45px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        padding-right: 60px;
+        transition: 0.3s padding ease;
+        &--more-than-three{
+            padding-top: 55px;
+        }
+        &--more-than-five{
+            padding-top: 70px;
+        }
+    }
+    &__title{
+        text-align: left;
+        font-size: 18px;
+        font-weight: normal;
+        margin: 0;
+        align-self: baseline;
+    }
+    &__days-left-wrapper{
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        padding: 3px 5px;
+        font-size: 12px;
+        border-radius: 3px;
+        border: 1px solid #fff;
+    }
+    &__days-left-number{
+       
+    }
+    &__areas{
+        position: absolute;
+        top: -10px;
+        left: 5px;
+        display: flex;
+        flex-wrap: wrap;
+        width: 300px;
+    }
+    &__areas-item{
+        padding: 3px 8px;
+        color: #fff;
+        white-space: nowrap;
+        font-size: 12px;
+        margin-bottom: 3px;
+        border-radius: 5px;
+        margin-right: 3px;
+        background-color: rgba(#000, 0.6);
+        &--health{
+            background-color: #00CC66;
+        }
+        &--family{
+            background-color: #F1C40F;
+        }
+        &--career{
+            background-color: #2274A5;
+        }
+        &--relax{
+            background-color: #73648A;
+        }
+        &--friends{
+            background-color: #FF9F1C;
+        }
+        &--self-development{
+            background-color: #14BDEB;
+        }
+        &--hobby{
+            background-color: #FFBACF;
+        }
+        &--money{
+            background-color: #FF2340;
+        }
+    }
+    &__content{
+        padding: 10px;
+    }
+    &__priority{
+        position: absolute;
+        width: 25px;
+        bottom: 10px;
+        right: 43px;
+        img{
+            width: 100%;    
+        }
+    }
+}

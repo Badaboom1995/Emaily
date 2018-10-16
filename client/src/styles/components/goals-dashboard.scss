@@ -1,0 +1,51 @@
+.goals-dashboard{
+    display: flex;
+    background-color: #5398BE;
+    height: 100vh;
+    overflow: scroll;
+    &__goals-list{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &__aside-menu{
+        height: 100vh;
+        padding-top: 30px;
+        background-color: #393E41;
+    }
+    &__nav-list{
+        padding: 0;
+        margin: 0;
+    }
+    &__nav-item{
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+    }
+    &__nav-link{
+        font-size: 16px;
+        color: #fff;
+        text-decoration: none;
+        padding: 10px 20px;
+        &:hover{
+            background-color: darken(#393E41, 10%);
+        }
+    }
+    &__main-screen{
+        padding: 30px;
+        position: relative;
+        flex-grow: 1;
+    }
+    &__add-goal{
+        position: absolute;
+        bottom: 30px;
+        right: 30px;
+        padding: 15px 30px;
+        background-color: rgba(#393E41, 0.7);
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        &:hover{
+            background-color: rgba(#393E41, 0.9);
+        }
+    }
+}

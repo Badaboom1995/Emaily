@@ -1,0 +1,30 @@
+.main-header{
+    position: relative;
+    padding: 20px;
+    display: flex;
+    // background-color: #FFD166;
+    background-color: #4C5760;
+    // display: none;
+    &--hidden{
+        display: none;
+    }
+    &__close{
+        position: absolute;
+        right: 600px;
+        top: 15px;
+        cursor: pointer;
+        display: none;
+    }
+    &__nav{
+
+    }
+    &__nav-link{
+        margin-right: 30px;
+        font-size: 22px;
+        text-decoration: none;
+        color: #fff;
+        &:last-child{
+            margin-right: 0;
+        }
+    }
+}

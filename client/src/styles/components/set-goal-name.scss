@@ -1,0 +1,35 @@
+.set-goal-name{
+    text-align: left;
+    margin-bottom: 30px;
+    &__input{
+        width: 100%;
+        display: block;
+        margin: 30px 0;
+        margin-bottom: 30px;
+        border: none;
+        padding: 10px 5px;
+        border-bottom: 1px solid lighten(#000, 15%);
+        transition: 0.3s border-bottom ease;
+        &:focus{
+            outline: none;
+            border-bottom: 1px solid #000;
+        }
+    }
+    &__rules-title{
+        font-weight: normal;
+        font-size: 16px;
+        // text-transform: uppercase;
+        margin-bottom: 15px;
+        color: darken(#777, 40%);
+    }
+    &__rules-list{
+        padding-left: 20px;
+        color: darken(#777, 40%);
+    }
+    &__rules-item{
+        margin-bottom: 12px;
+        // list-style: none;
+        font-size: 14px;
+        // letter-spacing: 0.7px;
+    }
+}

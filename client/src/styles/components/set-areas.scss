@@ -1,0 +1,115 @@
+.set-areas{
+    display: flex;
+    flex-direction: column;
+    &__inputs{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 30px;
+    }
+    &__input{
+        display: none;
+    }
+    &__description{
+        font-size: 14px;
+        color:darken(#c9c9c9, 20%);
+        text-align: left;
+        margin-top: 0;
+        margin-bottom: 10px;
+        // &:last-of-type{
+        //     margin-bottom: 30px;
+        // }
+    }
+    &__label{
+        // width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+        border-radius: 3px;
+        padding: 7px;
+        font-size: 14px;
+        border: 1px solid #c9c9c9;
+        color: #000;
+        cursor: pointer;
+        transition: 0.1s all ease;
+        &:hover{
+            // color: #fff;
+        }
+        &--health{
+            border-color: #00CC66;
+            &:hover{
+                background-color: rgba(#00CC66, 0.5);
+            }
+           
+        }
+        &--family{
+            border-color: #F1C40F;
+            &:hover{
+                background-color: rgba(#F1C40F, 0.5);
+            }
+            
+        }
+        &--career{
+            border-color: #2274A5;
+            &:hover{
+                background-color: rgba(#2274A5, 0.5);
+            }
+           
+        }
+        &--relax{
+            border-color: #73648A;
+            &:hover{
+                background-color: rgba(#73648A, 0.5);
+            }
+        }
+        &--friends{
+            border-color: #FF9F1C;
+            &:hover{
+                background-color: rgba(#FF9F1C, 0.5);
+            }
+        }
+        &--self-development{
+            border-color: #14BDEB;
+            &:hover{
+                background-color: rgba(#14BDEB, 0.5);
+            }
+        }
+        &--hobby{
+            border-color: #FFBACF;
+            &:hover{
+                background-color: rgba(#FFBACF, 0.5);
+            }
+        }
+        &--money{
+            border-color: #FF2340;
+            &:hover{
+                background-color: rgba(#FF2340, 0.5);
+            }
+        }
+    }
+    &__input:checked+&__label{
+        color:#fff;
+    }
+    &__input:checked+&__label--health{
+        background-color: rgba(#00CC66, 0.8);
+    }
+    &__input:checked+&__label--family{
+        background-color: rgba(#F1C40F, 0.8);
+    }
+    &__input:checked+&__label--career{
+        background-color: rgba(#2274A5, 0.8);
+    }
+    &__input:checked+&__label--relax{
+        background-color: rgba(#73648A, 0.8);
+    }
+    &__input:checked+&__label--friends{
+        background-color: rgba(#FF9F1C, 0.8);
+    }
+    &__input:checked+&__label--self-development{
+        background-color: rgba(#14BDEB, 0.8);
+    }
+    &__input:checked+&__label--hobby{
+        background-color: rgba(#FFBACF, 0.8);
+    }
+    &__input:checked+&__label--money{
+        background-color: rgba(#FF2340, 0.8);
+    }
+}

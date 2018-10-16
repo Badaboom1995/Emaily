@@ -1,0 +1,41 @@
+.button{
+    padding: 10px 15px;
+    background-color: #fff;
+    text-transform: uppercase;
+    font-size: 14px;
+    border-radius: 3px;
+    border: none;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    cursor: pointer;
+    &--green{
+        background-color: #7AC74F;
+        color: #fff;
+        &:hover{
+            background-color: darken(#7AC74F, 5%);
+        }
+    }
+    &--blue{
+        background-color: #6699CC;
+        color: #fff;
+        &:hover{
+            background-color: lighten(#6699CC, 5%);
+        }
+    }
+    &--big{
+        width: 100%;
+        font-size: 18px;
+    }
+    &--secondary{
+       background-color: transparent;
+       border: 1px solid #777;
+       color: #777;
+       font-size: 12px;
+       margin-top: 5px;
+       box-shadow: none;
+       &:hover{
+          border: 1px solid #555;
+          color: #555;
+          background-color: rgba(#ccc, 0.4);
+       }
+    }
+}
