@@ -176,11 +176,22 @@ class AddTarget extends React.Component {
                             </div>
                         </div>
 
-                        {/* Coming soon in next Frank releaze
+                        {/* Coming soon in next Frank version
                             <SetGoalType next = {this.next} onTypeChange={this.onTypeChange} nextButton = {false}/> 
                         */}
 
                         <SetGoalName onNameChange = {this.onNameChange} next = {this.next} previous = {this.previous} {...this.state}/>
+                        <div className='add-target__form-card-wrapper'>
+                            <div className='add-target__form-card'>
+                                <h3 className = 'add-target__card-title add-target__card-title--center'>Неплохо..<br/>Но могло бы быть и лучше!</h3>
+                                <br/>
+                                <br/>
+                                <div className="add-target__form-card-img"><img src="./images/fry.png" alt=""/></div>
+                                <p className = 'add-target__form-card-paragraph'>Я заметил, что в названии цели нет цифр, подозрительно. Вы вообще читали, что написано под полем ввода? Цель должна быть измеримой, вообще-то. Советую вернуться и переделать, мы жи тут саморазвииваться собрались.</p>
+                                <button onClick = {this.next} className='button add-target__card-button-forward'>Мне все равно, дальше</button>
+                                <button onClick = {this.previous} className='add-target__card-button-back'></button>
+                            </div>
+                        </div>
                         <AddTargetDuration onDurationChange = {this.onDurationChange} next = {this.next} previous = {this.previous} nextButton = {false} {...this.state}/>
                         <SetAreas onAreaChange={this.onAreaChange} next = {this.next} previous = {this.previous} {...this.state}/>
                         <SetDifficulty onDifficultyChange = {this.onDifficultyChange} previous = {this.previous} next = {this.next} {...this.state}/>
