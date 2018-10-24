@@ -1,4 +1,7 @@
 import React from 'react';
+import { fire } from '../firebase/firebase';
+import { connect } from 'react-redux';
+import { removeGoal } from '../actions/goals'
 
 
  const GoalDemo = (props) => {
@@ -11,7 +14,6 @@ import React from 'react';
                     ${props.onDashboard && 'goal-demo--on-dashboard'}
                 `}
             >
-                
                 <div className={`goal-demo__header ${ props.areas && props.areas.length > 5 && 'goal-demo__header--more-than-five'} ${ props.areas && props.areas.length > 3 && 'goal-demo__header--more-than-three'}`} >
                     <div className="goal-demo__areas">
                         {props.areas && props.areas.map((item, index) => {
@@ -31,6 +33,14 @@ import React from 'react';
                     <h2 className="goal-demo__title">{props.title ? props.title : 'Title going to be here'}</h2>
                     <span className="goal-demo__days-left-wrapper"><span className='goal-demo__days-left-number'>{props.duration}</span></span>
                 </div>
+                { props.onDashboard && <div onClick = {
+                    () => {
+                       fire.database().ref(`users/${props.user.userID}/goals/${props.id}`).remove()
+                       .then(() => {}
+                       );
+                       props.dispatch(removeGoal(props.id));
+                    }
+                } className="goal-demo__close"></div>}
                 {/* <div className="goal-demo__content">
                     <div className="goal-demo__content-item">
                     </div>
@@ -39,4 +49,9 @@ import React from 'react';
         )
 }
 
-export default GoalDemo;
+const mapStateToProps = state => ({
+    user: state.auth
+})
+
+
+export default connect(mapStateToProps)(GoalDemo);

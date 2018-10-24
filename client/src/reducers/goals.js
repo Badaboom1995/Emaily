@@ -1,5 +1,4 @@
 
-
 export default (state = [], action) => {
     switch (action.type) {
         case 'ADD_GOAL':
@@ -17,7 +16,8 @@ export default (state = [], action) => {
                     return item
                 }                
            })
-        
+        case 'CLEAR_GOALS':
+            return []
         default:
             return state
     }

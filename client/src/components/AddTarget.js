@@ -13,7 +13,8 @@ import { Link } from 'react-router-dom';
 import { addGoal } from '../actions/goals';
 import { switchHeader } from '../actions/general'
 import SetPriority from './SetPriority';
-const axios = require('axios');
+import axios from 'axios';
+import { fire } from '../firebase/firebase';
 
 
 class AddTarget extends React.Component {
@@ -59,19 +60,6 @@ class AddTarget extends React.Component {
         this.setState(() => ({
             isStarted: true,
         }))
-        axios.get('http://localhost:5000/')
-            .then(function (response) {
-       
-            console.log(response);
-            })
-            .catch(function (error) {
-            // handle error
-            console.log(error);
-            })
-            .then(function () {
-            // always executed
-        });
-        
     }
     next(e) {
     e.preventDefault();    
@@ -86,15 +74,23 @@ class AddTarget extends React.Component {
     }
     addGoal = (e) => {
         e.preventDefault();
-        this.props.dispatch(addGoal(
-        {
+        const goal = {
+            id: uuid(),
             name : this.state.name,
             duration : this.state.duration,
             areas: this.state.areas,
             difficulty: this.state.difficulty,
             priority:this.state.priority
-
-        }))
+        }
+        this.props.dispatch(addGoal(goal))
+        const databaseUsersRef = fire.database().ref(`users/${this.props.user.userID}/goals/${uuid()}`);
+        databaseUsersRef.set({
+            name : this.state.name,
+            duration : this.state.duration,
+            areas: this.state.areas,
+            difficulty: this.state.difficulty,
+            priority:this.state.priority
+        });
         this.props.history.push('/goals-dashboard')
     }
     onDurationChange = (value) => {
@@ -164,6 +160,7 @@ class AddTarget extends React.Component {
             <div className='add-target'>
                 {/* <GoalDemo difficulty={this.state.targetDifficulty } areas = {this.state.targetAreas} title = {this.state.targetName} duration = {this.state.targetDuration}/> */}
                 <form className = 'add-target__form'>
+                    <a href="">Hey mate!</a>
                     <Link to = '/goals-dashboard' className="add-target__exit-button"></Link>
                     {/* {this.state.activeSlide != 0 && <span className='add-target__step'>Шаг {this.state.activeSlide}</span>} */}
                     <Slider className='add-target__form-cards' ref={c => (this.slider = c)} {...this.settings}>
@@ -175,11 +172,9 @@ class AddTarget extends React.Component {
                                 <button onClick = {this.start} className='button button--blue add-target__form-card-start'>Начать</button>
                             </div>
                         </div>
-
                         {/* Coming soon in next Frank version
                             <SetGoalType next = {this.next} onTypeChange={this.onTypeChange} nextButton = {false}/> 
                         */}
-
                         <SetGoalName onNameChange = {this.onNameChange} next = {this.next} previous = {this.previous} {...this.state}/>
                         <div className='add-target__form-card-wrapper'>
                             <div className='add-target__form-card'>
@@ -231,7 +226,8 @@ class AddTarget extends React.Component {
 }
 
 const mapStateToProps = state => ({
-    goals: state.goals
+    goals: state.goals,
+    user: state.auth
   });
 
 export default connect(mapStateToProps)(AddTarget);

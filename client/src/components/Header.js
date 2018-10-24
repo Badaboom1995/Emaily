@@ -6,9 +6,8 @@ const Header  = (props) => (
     <header className={`main-header ${!props.general.headerVisible && 'main-header--hidden'}`}>
         <span className="main-header__close">Close</span>
         <nav className="main-header__nav">
-            <NavLink to='/' className='main-header__nav-link' activeClassName = 'main-header__nav-link--active'>Frank</NavLink>
+            <NavLink to='/' className='main-header__nav-link' activeClassName = 'main-header__nav-link--active'>Home</NavLink>
             <NavLink to='/goals-dashboard' className='main-header__nav-link' activeClassName = 'main-header__nav-link--active'>Goals</NavLink>
-            <NavLink to='/quests' className='main-header__nav-link' activeClassName = 'main-header__nav-link--active'>Quests</NavLink>
         </nav>
     </header>
 );

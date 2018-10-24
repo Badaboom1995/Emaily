@@ -1,10 +1,10 @@
 import uuid from 'uuid';
 
 
-export const addGoal = ({ name = '', duration = 0, areas = [], difficulty = '', priority = '' } = {}) => ({
+export const addGoal = ({ name = '', duration = 0, areas = [], difficulty = '', priority = '', id = '' } = {}) => ({
     type: 'ADD_GOAL',
     goal: {
-        id: uuid(),
+        id,
         name,
         duration,
         areas,
@@ -12,4 +12,11 @@ export const addGoal = ({ name = '', duration = 0, areas = [], difficulty = '', 
         priority,
 
     }
+})
+export const removeGoal = (id) => ({
+    type: 'REMOVE_GOAL',
+    id
+})
+export const clearGoals = () => ({
+    type: 'CLEAR_GOALS'
 })
